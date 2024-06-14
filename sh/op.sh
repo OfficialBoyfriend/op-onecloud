@@ -33,6 +33,7 @@ cp -rf chinadns-ng package
 cp -rf emortal package
 cp -rf luci-base feeds/luci/modules
 cp -rf luci-mod-status feeds/luci/modules/
+curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh
 
 ./scripts/feeds update -a
 ./scripts/feeds install -a
