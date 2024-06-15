@@ -135,7 +135,6 @@ jobs:
         CONFIG_PACKAGE_ppp-mod-pppoe=n
         CONFIG_PACKAGE_ppp=n
         CONFIG_PACKAGE_luci-app-firewall=y
-        CONFIG_PACKAGE_luci-app-turboacc=y
         CONFIG_PACKAGE_bash=y
         CONFIG_PACKAGE_kmod-nft-socket=y
         CONFIG_PACKAGE_fuse-utils=y
