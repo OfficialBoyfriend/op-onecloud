@@ -122,7 +122,6 @@ jobs:
     - name: 下载ad核心
       run: |
         chmod +x $DIY_P3_SH
-        cd openwrt
         $GITHUB_WORKSPACE/$DIY_P3_SH       
 
     - name: 加载自定义配置
