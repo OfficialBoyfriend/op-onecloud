@@ -19,7 +19,7 @@ git_sparse_clone $REPO_BRANCH https://github.com/immortalwrt/luci modules/luci-m
 git_sparse_clone $REPO_BRANCH https://github.com/immortalwrt/packages net/chinadns-ng
 
 git clone -b master --depth 1 --single-branch https://github.com/jerrykuku/luci-theme-argon package/xd/luci-theme-argon
-git clone -b master --depth 1 --single-branch https://github.com/bulianglin/homeproxy package/xd/luci-app-homeproxy
+git clone -b master --depth 1 --single-branch https://github.com/immortalwrt/homeproxy package/xd/luci-app-homeproxy
 git clone -b master --depth 1 --single-branch https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
 ./scripts/feeds update -a
