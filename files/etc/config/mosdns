@@ -1,7 +1,7 @@
 
 config mosdns 'config'
 	option enabled '1'
-	option listen_port '53'
+	option listen_port '5335'
 	option geo_auto_update '0'
 	option geo_update_week_time '*'
 	option geo_update_day_time '2'
@@ -29,5 +29,6 @@ config mosdns 'config'
 	option enable_ecs_remote '0'
 	list remote_dns 'tls://1.0.0.1'
 	option custom_stream_media_dns '0'
-	list local_dns '127.0.0.1:5553'
+	list local_dns 'quic://dns.alidns.com'
+	list local_dns 'https://dns.alidns.com/dns-query'
 
