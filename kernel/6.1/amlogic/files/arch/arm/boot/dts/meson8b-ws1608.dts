@@ -135,25 +135,22 @@
 
 		regulator-name = "VCC_CORE";
 
-		//   ------------------------------------------
-		//   |      The actual mapping in phyical       |
-		//   --------------------------------------
-		//   |      |  100%  |   60%  |   30%  |   0%   |
-		//   --------------------------------------
-		//   | V1.0 |  677mV |  857mV |  992mV | 1127mV |
-		//   | V1.3 | 1116mV | 1121mV | 1125mV | 1129mV |
-		//   --------------------------------------
+		//   ---------------------------------------------------
+		//   |           The actual mapping in phyical           |
+		//   ----------------------------------------------
+		//   |      |  100%  |   60%  |   30%  |   10%  |   0%   |
+		//   ----------------------------------------------
+		//   | V1.0 |  677mV |  857mV |  992mV | 1082mV | 1127mV |
+		//   | V1.3 | 1116mV | 1121mV | 1125mV | 1128mV | 1129mV |
+		//   ----------------------------------------------
 		//
-		// According to meson8b.dtsi, the CPU should be able
-		// to run at 504MHz with 870mV. But according to my
-		// test on V1.0, the system will crash in this case.
-		//
-		// And this regulator supplies not only CPU but also GPU.
-		//
-		// So we use higher voltages.
+		// According to meson8b.dtsi, the CPU should be able to
+		// run at 504MHz with 870mV. But this regulator supplies
+		// not only CPU but also GPU. And according to the users'
+		// tests on V1.0, we need such higher voltages.
 
 		pwms = <&pwm_cd 1 12001 0>;	// PWM_D
-		pwm-dutycycle-range = <30 0>;
+		pwm-dutycycle-range = <10 0>;
 		regulator-min-microvolt = <860000>;
 		regulator-max-microvolt = <1140000>;
 
