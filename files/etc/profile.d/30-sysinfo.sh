@@ -20,14 +20,9 @@ function display()
 {
     # 函数：显示系统信息
     # $1=name $2=value $3=red_limit $4=minimal_show_limit $5=unit $6=after
-    if [[ "$1" == "Battery" ]]; then
-        local great="<";
-    else
-        local great=">";
-    fi
-    if [[ -n "$2" && "$2" > "0" && (( "${2%.*}" -ge "$4" )) ]]; then
+    if [[ -n "$2" && "$2" -ge "$4" ]]; then
         printf "%-14s%s" "$1:"
-        if awk "BEGIN{exit ! ($2 $great $3)}"; then
+        if (( "$2" > "$3" )); then
             echo -ne "\e[0;91m $2";
         else
             echo -ne "\e[0;92m $2";
@@ -106,7 +101,7 @@ done
 ip_address="$(get_ip_addresses)"
 
 # 显示信息
-display "系统负载" "${load_percent%% *}" "${critical_load}" "0" " %" "${load#* }"
+display "系统负载" "${load_percent%% *}" "70" "0" " %" "${load#* }"
 printf "运行时间:  \x1B[92m%s\x1B[0m\t\t" "$time"
 echo ""
 
