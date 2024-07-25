@@ -10,7 +10,7 @@
 #include <dt-bindings/input/input.h>
 
 / {
-	model = "WS1608";
+	model = "Thunder OneCloud";
 	compatible = "thunder,onecloud", "amlogic,meson8b";
 
 	aliases {
@@ -350,13 +350,12 @@
 
 &ethmac {
 	status = "okay";
+
 	pinctrl-0 = <&eth_rgmii_pins>;
 	pinctrl-names = "default";
 
-	phy-handle = <&eth_phy0>;
-	phy-mode = "rgmii";
-	
-	amlogic,tx-delay-ns = <4>;
+	phy-handle = <&eth_phy>;
+	phy-mode = "rgmii-rxid";
 
 	mdio {
 		compatible = "snps,dwmac-mdio";
@@ -364,7 +363,7 @@
 		#size-cells = <0>;
 
 		// Realtek RTL8211F (0x001cc916)
-		eth_phy0: ethernet-phy@0 {
+		eth_phy: ethernet-phy@0 {
 			reg = <0>;
 
 			reset-assert-us = <10000>;
