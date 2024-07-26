@@ -95,7 +95,7 @@ jobs:
         echo "DATE=$DATE" >> $GITHUB_ENV 
         echo "kernel=${{ matrix.kernel_version }}" >> $GITHUB_ENV
         echo "REPO_URL=${{ github.event.inputs.REPO_URL }}" >> $GITHUB_ENV
-        echo "REPO_BRANCH=master" >> $GITHUB_ENV
+        echo "REPO_BRANCH=openwrt-23.05" >> $GITHUB_ENV
         echo "OP_IP=${{ github.event.inputs.OP_IP }}" >> $GITHUB_ENV
         echo "OP_author=${{ github.event.inputs.OP_author }}" >> $GITHUB_ENV
         echo "name=${{ github.event.inputs.name }}" >> $GITHUB_ENV
